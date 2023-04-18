@@ -19,7 +19,7 @@ public class PreGame : MonoBehaviour
     // Count down routine
     IEnumerator CountDown()
     {
-        while(waitTime > 0)
+        while (waitTime > 0)
         {
             waitTime -= Time.deltaTime;
             yield return null;

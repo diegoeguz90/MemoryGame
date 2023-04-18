@@ -12,11 +12,11 @@ public class PosGame : MonoBehaviour
     #region EventSuscription
     private void OnEnable()
     {
-        Game.OnTimeOut += CalculateScore;
+        Gameplay.OnTimeOut += CalculateScore;
     }
     private void OnDisable()
     {
-        Game.OnTimeOut -= CalculateScore;
+        Gameplay.OnTimeOut -= CalculateScore;
     }
     #endregion
 }

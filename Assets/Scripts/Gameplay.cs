@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class Gameplay : MonoBehaviour
 {
     [SerializeField] float waitTime = 30.0f;
 
