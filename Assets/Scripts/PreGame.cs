@@ -13,6 +13,8 @@ public class PreGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObjectManager.Instance.ShuffleInitialPos();
+        GameObjectManager.Instance.SetGrabablesPos(GameObjectManager.Instance.initPos);
         StartCoroutine("CountDown");
     }
 
@@ -22,6 +24,8 @@ public class PreGame : MonoBehaviour
         while (waitTime > 0)
         {
             waitTime -= Time.deltaTime;
+            GameObjectManager.Instance.SetTxtOnHUD("Rápido, memoriza las posiciones iniciales!",
+                "Tiempo: " + waitTime.ToString("F0") + " segundos");
             yield return null;
         }
         yield return new WaitForSeconds(0.3f);

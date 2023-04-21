@@ -13,6 +13,8 @@ public class Gameplay : MonoBehaviour
     // Start is called before the first frame update
     void GameBegin()
     {
+        GameObjectManager.Instance.ShuffleFinalPos();
+        GameObjectManager.Instance.SetGrabablesPos(GameObjectManager.Instance.finalPos);
         StartCoroutine("CountDown");
     }
 
@@ -22,6 +24,8 @@ public class Gameplay : MonoBehaviour
         while (waitTime > 0)
         {
             waitTime -= Time.deltaTime;
+            GameObjectManager.Instance.SetTxtOnHUD("Vuelve a poner todo en su lugar!",
+                "Tiempo: " + waitTime.ToString("F0") + " segundos");
             yield return null;
         }
         yield return new WaitForSeconds(0.3f);

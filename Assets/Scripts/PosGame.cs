@@ -6,7 +6,10 @@ public class PosGame : MonoBehaviour
 {
     void CalculateScore()
     {
-
+        GameObjectManager.Instance.GetUserPos();
+        int score = GameObjectManager.Instance.CalculateScore();
+        GameObjectManager.Instance.SetTxtOnHUD("el puntaje final fue: " + score,
+            "Tiempo: 00 segundos");
     }
 
     #region EventSuscription
