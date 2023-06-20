@@ -30,6 +30,8 @@ public class InteractionManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        selectedGameObject = new();
     }
 
     public void SetSelectorPos(GameObject touchedGameObject)
